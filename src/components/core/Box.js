@@ -1,19 +1,36 @@
 import React from 'react';
+import style from "../../style/style";
 function Box(props){
 
     //this is state
     const [mess,setMess]=React.useState("Hello");
     const [gray,setGray]=React.useState(false);
+    const [color,setColor]=React.useState("yellow");
 
     const grayOut = ()=>{
-        setMess("Good Bye");
+        setMess(props.dt.message);
         setGray(true);
+        setColor("red");
     };
 
+    const buttonStyle={
+        height:"50px",
+        backgroundColor:"green",
+        color:"white",
+        border:"none"
+    };
+
+    const boxStyle={
+        height:"20px",
+        width:"20px",
+        backgroundColor: color
+    }
+
     return(
-        <div>
-            <h1>{mess}</h1>
-            {gray===false&&<button onClick={grayOut}>{props.clk}</button>}
+        <div style={style.box}>
+            <div style={boxStyle}></div>
+            <h1 style={style.header}>{mess}</h1>
+            {gray===false&&<button style={buttonStyle} onClick={grayOut}>{props.dt.name}</button>}
         </div>
     )
 }
