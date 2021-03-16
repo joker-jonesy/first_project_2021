@@ -7,6 +7,8 @@ function Box(props){
     const [gray,setGray]=React.useState(false);
     const [color,setColor]=React.useState("yellow");
 
+    const list=["apples","oranges","pears"];
+
     const grayOut = ()=>{
         setMess(props.dt.message);
         setGray(true);
@@ -22,14 +24,19 @@ function Box(props){
 
     const boxStyle={
         height:"20px",
-        width:"20px",
+        width:props.dt.width,
         backgroundColor: color
     }
+
+    const fruits = list.map((lt,idx)=>
+        <p key={idx}>{lt}</p>
+    )
 
     return(
         <div style={style.box}>
             <div style={boxStyle}></div>
             <h1 style={style.header}>{mess}</h1>
+            {fruits}
             {gray===false&&<button style={buttonStyle} onClick={grayOut}>{props.dt.name}</button>}
         </div>
     )

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Looper(){
+function Looper(props){
     const [loop,setLoop]=React.useState(0);
     const items = ["stuff","things","straws"];
 
@@ -12,7 +12,7 @@ function Looper(){
     };
 
     return(
-        <div onClick={loopThrough}>
+        <div style={{backgroundColor:props.match.params.color}} onClick={loopThrough}>
             <button >loop</button>
             <h1>{items[loop]}</h1>
         </div>

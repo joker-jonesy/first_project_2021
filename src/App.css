@@ -50,3 +50,17 @@ code {
     transform: rotate(360deg);
   }
 }
+
+nav{
+  width:100%;
+  background-color: blue;
+  color: white;
+  height: 80px;
+
+}
+
+a{
+  color: white;
+  text-decoration: none;
+  margin: 8px;
+}
