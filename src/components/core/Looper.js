@@ -14,6 +14,7 @@ function Looper(props){
     return(
         <div style={{backgroundColor:props.match.params.color}} onClick={loopThrough}>
             <button >loop</button>
+            {props.match.params.color}
             <h1>{items[loop]}</h1>
         </div>
     )

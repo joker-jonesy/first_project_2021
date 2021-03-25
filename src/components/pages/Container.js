@@ -21,11 +21,27 @@ function Container() {
         }
     ]);
 
+    //const [number, setNum] = React.useState(0);
+
     const [visual, setVisual]= React.useState(data);
     const [sort, setSort]= React.useState("none");
 
+    //const [color, setColor]= React.useState("red");
+
     React.useEffect(()=>{
+
+        //if()
+        //if(number%5!==0)
+
         let newArray;
+
+        //for (var i=0; i<number; i++)
+        //push empty string into newArray i
+        //[0,1, 2,....]
+
+        //random color assign
+        //if(number is divisible by 2
+        //change the color based on a set of random colors
 
         if(sort==="e"){
             newArray=data.filter(function(it) {
@@ -45,10 +61,11 @@ function Container() {
     },[data,sort]);
 
 
-
+    //function
 
 
     let buttons = visual.map((dt, idx) =>
+        //color attribute prop goes here
         <Box key={idx} dt={dt}/>
     );
 
